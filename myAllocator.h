@@ -12,7 +12,10 @@ typedef struct BlockSuffix_s {
 } BlockSuffix_t;
 
 void arenaCheck(void);
+void *checkSplit(size_t s, BlockPrefix_t *p, int n);
 void *firstFitAllocRegion(size_t s);
+void *nextFitAllocRegion(size_t s);
+void *bestFitAllocRegion(size_t s);
 void freeRegion(void *r);
 void *resizeRegion(void *r, size_t newSize);
 size_t computeUsableSpace(BlockPrefix_t *p);

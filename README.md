@@ -1,4 +1,25 @@
 # os-malloc
+
+## Modifications
+
+- Added implementations for both next-fit and best-fit policies
+- Modified resizeRegion method to enlarge the current region if the next region is unallocated and has enough space
+
+Added 3 new files to test each policy: 
+- bestFitAllocatorTester
+- firstFitAllocatorTester
+- nextFitAllocatorTester
+
+Each tester allocate 10 blocks of memory each different size(i.e p1=254000 p2=40000,etc), they free 5 blocks and then allocate 5 blocks again each of different size. All testers use the same sizes when allocating so that we can see the diffenrces(i.e p1 for bestFitAllocatorTester is the same size as p1 of firstFitAllocator).
+
+All these testers use direct testing only, that is they do not use malloc.c, however they were tested using malloc.c and they do work.
+
+Testing for the resizeRegion are implemented in both myAllocatorTest1 and test1.
+
+To compile and clean follow original readme instructions.
+
+
+## Original README
 This directory contains:
 
 myAllocator.c: a first-fit allocator
